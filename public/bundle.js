@@ -55,7 +55,6 @@
 	    IndexRoute = _require.IndexRoute,
 	    hashHistory = _require.hashHistory;
 
-	var Main = __webpack_require__(222);
 	var App = __webpack_require__(223);
 
 	ReactDOM.render(React.createElement(
@@ -25411,28 +25410,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 222 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var React = __webpack_require__(1);
-
-	var Main = React.createClass({
-	    displayName: 'Main',
-
-	    render: function render() {
-	        return React.createElement(
-	            'h1',
-	            null,
-	            'Hi'
-	        );
-	    }
-	});
-
-	module.exports = Main;
-
-/***/ },
+/* 222 */,
 /* 223 */
 /***/ function(module, exports, __webpack_require__) {
 

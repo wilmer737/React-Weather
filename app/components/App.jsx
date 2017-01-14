@@ -1,9 +1,13 @@
 var React = require('react');
+var Nav = require('Nav');
 
 var App = React.createClass({
     render: function() {
         return (
-            <h1>Hi</h1>
+            <div>
+                <Nav />
+                <h1>Hi</h1>
+            </div>
         );
     }
 });

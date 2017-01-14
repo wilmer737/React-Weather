@@ -55,7 +55,7 @@
 	    IndexRoute = _require.IndexRoute,
 	    hashHistory = _require.hashHistory;
 
-	var App = __webpack_require__(223);
+	var App = __webpack_require__(222);
 
 	ReactDOM.render(React.createElement(
 	    Router,
@@ -25410,7 +25410,34 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 222 */,
+/* 222 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var Nav = __webpack_require__(223);
+
+	var App = React.createClass({
+	    displayName: 'App',
+
+	    render: function render() {
+	        return React.createElement(
+	            'div',
+	            null,
+	            React.createElement(Nav, null),
+	            React.createElement(
+	                'h1',
+	                null,
+	                'Hi'
+	            )
+	        );
+	    }
+	});
+
+	module.exports = App;
+
+/***/ },
 /* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -25418,19 +25445,19 @@
 
 	var React = __webpack_require__(1);
 
-	var App = React.createClass({
-	    displayName: 'App',
+	var Nav = React.createClass({
+	    displayName: 'Nav',
 
 	    render: function render() {
 	        return React.createElement(
-	            'h1',
+	            'h2',
 	            null,
-	            'Hi'
+	            'Nav'
 	        );
 	    }
 	});
 
-	module.exports = App;
+	module.exports = Nav;
 
 /***/ }
 /******/ ]);

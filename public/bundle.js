@@ -25523,10 +25523,13 @@
 	    },
 
 	    handleSearch: function handleSearch(location) {
-	        this.setState({
-	            location: location,
-	            temp: 54
-	        });
+	        /*
+	            this.setState({
+	                location: location,
+	                temp: 54,
+	            });
+	        */
+
 	    },
 
 	    render: function render() {

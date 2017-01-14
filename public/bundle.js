@@ -25515,6 +25515,20 @@
 	var Weather = React.createClass({
 	    displayName: 'Weather',
 
+	    getInitialState: function getInitialState() {
+	        return {
+	            location: 'San Diego',
+	            temp: 78
+	        };
+	    },
+
+	    handleSearch: function handleSearch(location) {
+	        this.setState({
+	            location: location,
+	            temp: 54
+	        });
+	    },
+
 	    render: function render() {
 	        return React.createElement(
 	            'div',
@@ -25524,38 +25538,47 @@
 	                null,
 	                'Weather Component'
 	            ),
-	            React.createElement(WeatherForm, null),
-	            React.createElement(WeatherMessage, null)
+	            React.createElement(WeatherForm, { onSearch: this.handleSearch }),
+	            React.createElement(WeatherMessage, { location: this.state.location, temp: this.state.temp })
 	        );
 	    }
 	});
 
 	module.exports = Weather;
 
-	// Weather
-	// Weather Form
-	// Weather Message
-
 /***/ },
 /* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var React = __webpack_require__(1);
 
 	var WeatherForm = React.createClass({
-	    displayName: "WeatherForm",
+	    displayName: 'WeatherForm',
+
+	    onFormSubmit: function onFormSubmit(e) {
+	        e.preventDefault();
+	        var location = this.refs.location.value;
+	        if (location.length > 0) {
+	            this.refs.location.value = '';
+	            this.props.onSearch(location);
+	        }
+	    },
 
 	    render: function render() {
 	        return React.createElement(
-	            "form",
+	            'div',
 	            null,
-	            React.createElement("input", { type: "text" }),
 	            React.createElement(
-	                "button",
-	                null,
-	                "Get Weather"
+	                'form',
+	                { onSubmit: this.onFormSubmit },
+	                React.createElement('input', { type: 'text', ref: 'location' }),
+	                React.createElement(
+	                    'button',
+	                    null,
+	                    'Get Weather'
+	                )
 	            )
 	        );
 	    }
@@ -25576,9 +25599,12 @@
 
 	    render: function render() {
 	        return React.createElement(
-	            'h1',
+	            'h3',
 	            null,
-	            'Weather Message'
+	            'It is ',
+	            this.props.temp,
+	            ' degrees in ',
+	            this.props.location
 	        );
 	    }
 	});

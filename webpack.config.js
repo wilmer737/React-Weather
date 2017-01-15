@@ -24,6 +24,7 @@ module.exports = {
         alias: {
             About: 'app/components/About.jsx',
             App: 'app/components/App',
+            applicationStyles: 'app/styles/app.css',
             ErrorModal: 'app/components/ErrorModal.jsx',
             Examples: 'app/components/Examples.jsx',
             Nav: 'app/components/Nav',
